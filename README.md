@@ -184,3 +184,105 @@ import path from 'path'
 
 ![image-20220521153702456](C:\Users\pc-007\AppData\Roaming\Typora\typora-user-images\image-20220521153702456.png)
 
+
+
+## 별명 붙혀서 import 해보기
+
+
+
+React를 하다보면 디렉토리 이동이 상당히 많다.
+
+그래서 항상 ../../../ 이런식으로 이동해서 사용하는경우가 많다보니.
+
+별명을 붙혀서 디렉토리 설정을 하는 경우가 많다.
+
+
+
+일단 Typescript에서 별명을 붙혀보도록하자
+
+> 참고 URL
+>
+> https://www.typescriptlang.org/docs/handbook/module-resolution.html
+
+
+
+**tsconfig.json**
+
+```json
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "es6",
+        "target": "es5",
+        "jsx": "react",
+        "esModuleInterop": true,
+        "allowJs": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "baseUrl": ".",
+        "paths": {
+            "@pages/*": ["src/pages/*"]
+        }
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "commonjs"
+        }
+    }
+}
+
+```
+
+
+
+`baseUrl` 과 `paths` 내용을 추가하였다. 
+
+
+
+하지만 webpack명령어로 실행해서 빌드를 진행해보니깐..
+
+에러가 발생되었다.
+
+
+
+```shell
+ERROR in ./src/app.ts 1:0-33
+Module not found: Error: Can't resolve '@pages/index' in '/mnt/c/Users/pc-007/Documents/workspace/socket/typescript_webpack/src'
+resolve '@pages/index' in '/mnt/c/Users/pc-007/Documents/workspace/socket/typescript_webpack/src'
+```
+
+
+
+흠.. 에디터에서 에러 발생은 안되었지만.
+
+
+
+아마 웹팩 빌드과정에서 @pages 를 못읽는거 같다.
+
+
+
+> 참고사이트
+>
+> https://webpack.js.org/configuration/resolve/#resolvealias
+
+
+
+웹팩에서 설정을해서 빌드할수있게 도와줘야할거같다.
+
+**webpack.config.ts**
+
+```
+ resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+        alias: {
+            '@pages': path.resolve(__dirname, 'src/pages'),
+        },
+    },
+```
+
+이와같이 설정하고 실행시키는 되었다.
+
+
+

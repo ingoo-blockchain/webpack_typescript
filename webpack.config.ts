@@ -9,6 +9,9 @@ const config: webpack.Configuration = {
     devtool: isDevelopment ? 'eval' : 'hidden-source-map',
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+        alias: {
+            '@pages': path.resolve(__dirname, 'src/pages'),
+        },
     },
     entry: {
         app: './src/index', // resovle에 따라 확장자 생략

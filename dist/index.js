@@ -16,7 +16,7 @@
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar apps = 'hello apps';\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (apps);\n\n\n//# sourceURL=webpack://typescript_webpack/./src/app.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _pages_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pages/index */ \"./src/pages/index.ts\");\n\nvar apps = 'hello apps';\nconsole.log(_pages_index__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (apps);\n\n\n//# sourceURL=webpack://typescript_webpack/./src/app.ts?");
 
 /***/ }),
 
@@ -27,6 +27,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./src/app.ts\");\n\nvar myName = 'ingoo';\nvar sample = true;\nconsole.log(_app__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\n\n//# sourceURL=webpack://typescript_webpack/./src/index.ts?");
+
+/***/ }),
+
+/***/ "./src/pages/index.ts":
+/*!****************************!*\
+  !*** ./src/pages/index.ts ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar index = 'test';\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (index);\n\n\n//# sourceURL=webpack://typescript_webpack/./src/pages/index.ts?");
 
 /***/ })
 
