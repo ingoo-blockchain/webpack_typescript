@@ -12,12 +12,16 @@
         "strict": true,
         "baseUrl": "./src",
         "paths": {
-            "@pages/*": ["pages/*"]
+            "@pages/*": ["pages/*"],
+            "@css/*": ["assets/css/*"]
         }
     },
     "ts-node": {
         "compilerOptions": {
             "module": "commonjs"
+            // "moduleResolution": "Node",
+            // "target": "es5",
+            // "esModuleInterop": true
         }
     }
 }
